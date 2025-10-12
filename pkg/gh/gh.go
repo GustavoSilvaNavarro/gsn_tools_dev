@@ -30,15 +30,11 @@ func ApproveGhPrs() *cobra.Command {
 			ghCmd.Stdout = os.Stdout
 			ghCmd.Stderr = os.Stderr
 
-			fmt.Println(prURL)
-			fmt.Println(message)
-
 			// Run the command
 			if err := ghCmd.Run(); err != nil {
-				fmt.Fprintf(os.Stderr, "Failed to approve the PR: %v\n", err.Error())
-				os.Exit(1)
+				fmt.Fprintf(os.Stderr, "☠️ Failed to approve the PR: %v\n", err.Error())
 			} else {
-				fmt.Println("Pull Request approved successfully!")
+				fmt.Println("🎉 Pull Request approved successfully!")
 			}
 		},
 	}
