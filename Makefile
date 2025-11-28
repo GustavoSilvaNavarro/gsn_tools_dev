@@ -6,5 +6,5 @@ DOCKER_COMPOSE_TAG = $(SERVICE_NAME)_1
 TICKET_PREFIX := $(shell git branch --show-current | cut -d '_' -f 1)
 
 # App Commands
-start:
-	go run ./src/main.go
+dev:
+	go run ./cmd/main.go

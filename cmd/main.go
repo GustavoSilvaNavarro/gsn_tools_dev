@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"os"
 
+	"gsn-dev-tools/internals/files"
 	"gsn-dev-tools/pkg/gh"
 
 	"github.com/spf13/cobra"
@@ -33,6 +34,7 @@ func main() {
 
 	rootCmd.AddCommand(showCmd)
 	rootCmd.AddCommand(gh.ApproveGhPrs())
+	rootCmd.AddCommand(files.FileUpdateCmd())
 
 	if err := rootCmd.Execute(); err != nil {
 		fmt.Println(err.Error())
