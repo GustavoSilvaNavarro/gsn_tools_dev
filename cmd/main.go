@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"os"
 
+	"gsn-dev-tools/internals/certificates"
 	"gsn-dev-tools/internals/files"
 	"gsn-dev-tools/pkg/gh"
 
@@ -36,6 +37,7 @@ func main() {
 	rootCmd.AddCommand(gh.ApproveGhPrs())
 	rootCmd.AddCommand(files.FileUpdateCmd())
 	rootCmd.AddCommand(files.CompressionCmd())
+	rootCmd.AddCommand(certificates.GenerateCertsCmd())
 
 	if err := rootCmd.Execute(); err != nil {
 		fmt.Println(err.Error())
